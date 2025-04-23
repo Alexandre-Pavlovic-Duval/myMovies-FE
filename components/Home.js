@@ -35,7 +35,7 @@ function Home() {
   );
 
   useEffect(() => {
-    fetch("https://my-movies-be.vercel.app/movies/")
+    fetch("https://my-movies-be.vercel.app/"  + '/movies')
     .then(response => response.json())
     .then(data => {
       setMoviesData(data.movies);
@@ -51,7 +51,7 @@ function Home() {
     }
 
     return <Movie key={i} updateLikedMovies={updateLikedMovies} isLiked={isLiked} title={data.title} overview={data.overview} poster={"https://image.tmdb.org/t/p/w500/"+data.
-      poster_path} voteAverage={data.voteAverage} voteCount={data.voteCount} />;
+      poster_path} voteAverage={data.vote_average} voteCount={data.vote_count} />;
   });
 
   return (
